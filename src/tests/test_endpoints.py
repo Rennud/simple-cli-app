@@ -8,8 +8,8 @@ from ..file_client.api.flask_config.api_setup import add_resources
 # Running function to add api endpoints
 add_resources()
 
-host = environ.get('FLASK_HOST')
-port = environ.get('FLASK_HOST')
+HOST = environ.get('FLASK_HOST')
+PORT = environ.get('FLASK_PORT')
 
 
 class FlaskTestCase(unittest.TestCase):
@@ -20,7 +20,7 @@ class FlaskTestCase(unittest.TestCase):
         """
         with app.test_client() as tester:
             try:
-                response = tester.get(f"{host}:{port}/read/1", headers={"Content-Type": "application/json"})
+                response = tester.get(f"{HOST}:{PORT}/read/1", headers={"Content-Type": "application/json"})
                 response_message = response.__dict__["_status"] # Response message details
                 response_status_code = response.status_code # Status code
 
@@ -41,7 +41,7 @@ class FlaskTestCase(unittest.TestCase):
         """
         with app.test_client() as tester:
             try:
-                response = tester.get(f"{host}:{port}/stat/1", headers={"Content-Type": "application/json"})
+                response = tester.get(f"{HOST}:{PORT}/stat/1", headers={"Content-Type": "application/json"})
                 response_message = response.__dict__["_status"] # Response message details
                 response_status_code = response.status_code # Status code
 
