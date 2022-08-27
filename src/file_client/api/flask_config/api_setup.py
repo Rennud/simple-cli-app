@@ -5,21 +5,22 @@ from ..read_resources.read import Read
 from ..stat_resources.stat import Stat
 from typing import Optional
 
+
 def add_resources() -> Optional[bool]:
     try:
         api.add_resource(
             HealthCheck,
-            "/health")
+            '/health')
 
         api.add_resource(
             Stat,
-            "/stat/<string:uuid>")
+            '/file/<string:uuid>/stat/')
 
         api.add_resource(
             Read,
-            "/read/<string:uuid>")
+            '/file/<string:uuid>/read/')
         return True
 
     except Exception:
-        print("Adding API resources failed...")
+        print('Adding API resources failed...')
         exit(1)
