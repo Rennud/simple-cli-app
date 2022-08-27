@@ -12,8 +12,8 @@ if [ $CONFIRMATION == '1' ]; then
     echo $VENV
 
     cd ../../
-    cd src/file_client/api
-    flask run
+    cd src
+    python3 app.py
 
     # return to root dir and deactivate venv
     cd ../../../
