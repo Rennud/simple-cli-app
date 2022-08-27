@@ -25,7 +25,7 @@ class Stat(Resource):
             # For exercise purposes I am working with just one file
             filename: str = os.listdir(STAT_DIRECTORY_PATH)[0]
             # Getting file stats
-            stat: str = os.stat(os.path.join(STAT_DIRECTORY_PATH, filename))
+            stat = os.stat(os.path.join(STAT_DIRECTORY_PATH, filename))
 
             create_datetime: str = datetime.datetime.fromtimestamp(
                     os.path.getctime(f'{STAT_DIRECTORY_PATH}/{filename}')
@@ -35,7 +35,7 @@ class Stat(Resource):
                 f'{STAT_DIRECTORY_PATH}/{filename}', mime=True
                 )
 
-            meta_data: dict = {
+            meta_data = {
                 'create_datetime': create_datetime,
                 'size': file_size,
                 'mimetype': mimetype,
