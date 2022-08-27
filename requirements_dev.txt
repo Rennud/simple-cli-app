@@ -3,4 +3,4 @@ tox==3.24.3
 pytest==7.0.1
 pytest-cov==2.12.1
 mypy==0.910
-tomli==2.0.1
+tomli==1.2.3
