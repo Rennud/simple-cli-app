@@ -1,7 +1,7 @@
 from pprint import pprint
 
 
-def file_client_manager(response, output):
+def manager(response, output):
     '''Manager for handling reponses from BE'''
     data = response.json()
     if output == '-':

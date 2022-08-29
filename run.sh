@@ -1,38 +1,29 @@
 #!/bin/bash
-echo "1 - flask run, 2 - run tests, 3 for quit: "
+echo "1 - install environment, 2 - flask run, 3 - run tests, 4 for quit: "
 read CONFIRMATION
 
-VENV="Virtual environmet activated"
+# install env
+if [ $CONFIRMATION == '1' ]; then
+    python3 -m venv env
+    source env/bin/activate
+
+    python3 setup.py install
 
 # run flask app
-if [ $CONFIRMATION == '1' ]; then
-    # activate venv
-    cd env/bin
-    source activate
-    echo $VENV
+elif [ $CONFIRMATION == '2' ]; then
+    source env/bin/activate
 
-    cd ../../
     cd src
     python3 app.py
 
-    # return to root dir and deactivate venv
-    cd ../../../
-    deactivate
-
 # run tests
-elif [ $CONFIRMATION == '2' ]; then
-    # activate venv
-    cd env/bin
-    source activate
-    echo $VENV
+elif [ $CONFIRMATION == '3' ]; then
+    source env/bin/activate
 
     # run tests
-    cd ../../
     pytest -v
 
-    deactivate
-
 # exit
-elif [ $CONFIRMATION == '3' ]; then
+elif [ $CONFIRMATION == '4' ]; then
     echo "Code more next time."
 fi
