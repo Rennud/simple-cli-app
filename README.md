@@ -26,7 +26,7 @@ The project is licensed under the MIT license. It is permissive free software li
 </code></pre>
 
 <p>Run script with read option to stdout:</p>
-<p><code>python3 -m file-client --base-url=http://localhost:5000/ read 7f8b6891-defc-475d-9c67-b8eca4cd23b4</code></p>
+<p><code>python3 -m file-client --base-url=http://localhost:5000 read 7f8b6891-defc-475d-9c67-b8eca4cd23b4</code></p>
 
 <pre><code>
 {'create_datetime': '2022-08-27T17:13:45.827660',
@@ -35,7 +35,8 @@ The project is licensed under the MIT license. It is permissive free software li
  'size': 272}
 </code></pre>
 
-<pre><code>
+<p>Run script with stat option to stdout:</p>
+<p><code>python3 -m file-client --base-url=http://localhost:5000 stat 7f8b6891-defc-475d-9c67-b8eca4cd23b4<pre><code>
 Usage: python -m file-client [OPTIONS] ENDPOINT UUID
 
   Provide a command ``file-client`` with following usage:
