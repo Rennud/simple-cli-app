@@ -7,7 +7,7 @@ from src.file_client.commands_manager.manager import manager
 @click.command()
 @click.option(
     '--base-url',
-    default='http://localhost:5000',
+    default='http://localhost/',
     help='Set a base URL for a REST server. Default is http://localhost/.'
     )
 @click.option(

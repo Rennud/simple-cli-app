@@ -63,9 +63,11 @@ Options:
 <p><code>python3 -m file-client --help</code></p>
 
 ## Library installation
-In this project I am using <code>setup.cfg</code> and <code>setup.py</code> in <code>setup.cfg</code> are all needed dependencies. <code>setup.py</code> is just for starting the installation.
-<p>Before installation of dependencies don't forget to create and activate virtual environment: <code>python3 -m venv venv</code></p>
-<p>To install all dependencies from setup.cfg: <code>python3 setup.py install</code></p>
+<p>Quick start</p>
+<code>./run</code></p>
+<p>First option</p>
 
 ## Community and support
 If you have any issue or question please let us know via creating a new issue [here](https://github.com/Rennud/simple-cli-file-client/issues).
+
+
