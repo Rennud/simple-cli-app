@@ -1,14 +1,14 @@
 import click
 import requests
 
-from file_client.commands_manager.manager import manager
+from src.file_client.commands_manager.manager import file_client_manager
 
 
 @click.command()
 @click.option(
     '--base-url',
-    default='http://localhost:5000/',
-    help='Set a base URL for a REST server. Default is http://localhost:5000/.'
+    default='http://localhost/',
+    help='Set a base URL for a REST server. Default is http://localhost/.'
     )
 @click.option(
     '--output',
@@ -34,7 +34,9 @@ def file_client_manager(endpoint: str, uuid: str, base_url, output):
     '''
     try:
         response = requests.get(f'{base_url}/file/{uuid}/{endpoint}/')
-        manager(response, output)
+
+        # call file_client_manager func to handle what to do with the response
+        file_client_manager(response, output)
 
     except BaseException as e:
         print(e)
