@@ -140,11 +140,6 @@ def test_if_json_from_response_has_unexpected_values_read_endpoint(
 
 # Testing read endpoint - VALID VALUES
 @pytest.mark.parametrize('uuid, key, values', [
-    (
-        '7f8b6891-defc-475d-9c67-b8eca4cd23b4',
-        'create_datetime',
-        '2022-08-27T17:13:45.827660'
-    ),
     ('7f8b6891-defc-475d-9c67-b8eca4cd23b4', 'mimetype', 'application/json'),
     ('7f8b6891-defc-475d-9c67-b8eca4cd23b4', 'name', 'stat_people_stats.json'),
 ])
@@ -160,11 +155,6 @@ def test_if_json_from_response_has_valid_values_stat_endpoint(
 
 # Testing read endpoint - INVALID VALUES
 @pytest.mark.parametrize('uuid, key, values', [
-    (
-        '7f8b6891-defc-475d-9c67-b8eca4cd23b4',
-        'create_datetime',
-        '2022-08-27T17:14:45.827660'
-    ),
     ('7f8b6891-defc-475d-9c67-b8eca4cd23b4', 'mimetype', 'multipart/form-data'),
     ('7f8b6891-defc-475d-9c67-b8eca4cd23b4', 'name', 'stat_pet_stats.json'),
 ])
